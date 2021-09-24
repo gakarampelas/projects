@@ -1,10 +1,9 @@
-
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Deck {
 
-    static int size = 52; //deck's size by default equals to 52
+    final static int SIZE = 52; //deck's size by default equals to 52
     private ArrayList<Card> cards;
 
     public Deck(Deck d) { //copies the deck given 
@@ -14,10 +13,10 @@ public class Deck {
 
     public Deck(int howManyDecks) {  //mixes *howManyDecks deck's
         cards = new ArrayList<Card>();
-        for(int i=0;i<howManyDecks;i++) 
-         this.cards.addAll(new Deck().cards);
+        for (int i = 0; i < howManyDecks; i++)
+            this.cards.addAll(new Deck().cards);
     }
-    
+
 
     public Deck() {
         cards = new ArrayList<Card>();
@@ -40,7 +39,6 @@ public class Deck {
                 }
 
                 cards.add(new Card(tempCard)); //inserts card in deck
-
             }
             //colour is Red
             tempCard.setColour("Red");
@@ -52,11 +50,9 @@ public class Deck {
                     tempCard.setQuality("Diamond");
                 }
                 cards.add(new Card(tempCard)); //inserts card in deck
-                //	
-
             }
         }
-		//------------------------initialisation of numbers------------------------------------>
+        //------------------------initialisation of numbers------------------------------------>
 
         //<------------------------initialisation of Aces,King,Queen,Jack---------------------------------------
         for (int i = 0; i < 4; i++) {
@@ -94,7 +90,7 @@ public class Deck {
             cards.add(new Card(tempCard)); //inserts card in deck
 
         }
-		//--------------------------initialisation of Aces,King,Queen,Jack--------------------------------------->		
+        //--------------------------initialisation of Aces,King,Queen,Jack--------------------------------------->
 
     }
 
@@ -104,39 +100,38 @@ public class Deck {
         return this.cards.remove(n);
     }
 
-    public void shuffle() { //shuffles the deck 
+    private void shuffle() { //shuffles the deck
         Deck temp = new Deck(this.cards.size());
         Random rand = new Random();
-      
-        
-        int DecksCount=cards.size(); //xrhsimopoieitai giati to megethos twn arraylist einai metavlhto
+        int DecksCount = cards.size();
         for (int i = 0; i < DecksCount; i++) {
             temp.cards.add(this.cards.remove(rand.nextInt(this.cards.size())));
         }
-      
         this.cards = temp.cards;
 
     }
-    public void chances(Deck d){
-        for(int i=1;i<11;i++){
-            System.out.println("P("+ i +")="+ d.chanceOf(i));
+
+   /* public void chances(Deck d) {
+        for (int i = 1; i < 11; i++) {
+            System.out.println("P(" + i + ")=" + d.chanceOf(i));
         }
-    }
-    public double chanceOf(int number){ //chance of drawing a specific value in the deck is #numberAppearances/#currentDecksSize
-        
-        int currentSize=this.cards.size();
-        double appearances=0;
+    }*/
+
+   /* public double chanceOf(int number) { //chance of drawing a specific value in the deck is #numberAppearances/#currentDecksSize
+
+        int currentSize = this.cards.size();
+        double appearances = 0;
         for (Card card : this.cards) {
-            if (card.getValue()==number) {
-                appearances+=1;
+            if (card.getValue() == number) {
+                appearances += 1;
             }
         }
         double pos;
         pos = appearances / currentSize;
-       
+
         return pos;
-    }
-   
+    }*/
+
 
     @Override
     public String toString() {

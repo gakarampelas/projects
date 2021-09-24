@@ -1,5 +1,3 @@
-
-
 public class Card {
 
     private int value; // value to be counted
@@ -21,39 +19,39 @@ public class Card {
         this.quality = "";
     }
 
-    public Card(int value, String kind, String colour, String quality) {
+   /* public Card(int value, String kind, String colour, String quality) {
         this.value = value;
         this.kind = kind;
         this.colour = colour;
         this.quality = quality;
-    }
+    }*/
 
     public int getValue() {
         return this.value;
-    }
-
-    public String getKind() {
-        return this.kind;
-    }
-
-    public String getColour() {
-        return this.colour;
-    }
-
-    public String getQuality() {
-        return this.quality;
     }
 
     public void setValue(int value) {
         this.value = value;
     }
 
+    public String getKind() {
+        return this.kind;
+    }
+
     public void setKind(String kind) {
         this.kind = kind;
     }
 
+    public String getColour() {
+        return this.colour;
+    }
+
     public void setColour(String colour) {
         this.colour = colour;
+    }
+
+    public String getQuality() {
+        return this.quality;
     }
 
     public void setQuality(String quality) {
@@ -63,8 +61,8 @@ public class Card {
     @Override
     public String toString() {
         String r = "Card with value=" + this.getValue();
-        if("Ace".equals(this.getKind())) r+= " or 11";
-        r+= " kind=" + this.getKind() + " colour= " + this.getColour() + " quality=" + this.getQuality() + "\n";
+        if ("Ace".equals(this.getKind())) r += " or 11";
+        r += " kind=" + this.getKind() + " colour= " + this.getColour() + " quality=" + this.getQuality() + "\n";
         return r;
     }
 
