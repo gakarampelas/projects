@@ -27,7 +27,7 @@ public class Card {
     }*/
 
     public int getValue() {
-        return this.value;
+        return value;
     }
 
     public void setValue(int value) {
@@ -35,7 +35,7 @@ public class Card {
     }
 
     public String getKind() {
-        return this.kind;
+        return kind;
     }
 
     public void setKind(String kind) {
@@ -43,7 +43,7 @@ public class Card {
     }
 
     public String getColour() {
-        return this.colour;
+        return colour;
     }
 
     public void setColour(String colour) {
@@ -51,7 +51,7 @@ public class Card {
     }
 
     public String getQuality() {
-        return this.quality;
+        return quality;
     }
 
     public void setQuality(String quality) {
